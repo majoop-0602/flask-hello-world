@@ -9,17 +9,21 @@ CORS(app)
 @app.route('/pagos')
 def pagos():
     import mysql.connector
+
     try:
-    mydb = mysql.connector.connect(
-        host="46.28.42.226",
-        user="u760464709_24005242_usr",
-        password="u7?Jpkt>Y*E7",
-        database="u760464709_24005242_bd"
-    )
-    mycursor = mydb.cursor(dictionary=True)
-    mycursor.execute("SELECT * FROM view_InfoPagos")
-    myresult = mycursor.fetchall()
-    
+        mydb = mysql.connector.connect(
+            host="46.28.42.226",
+            user="u760464709_24005242_usr",
+            password="u7?Jpkt>Y*E7",
+            database="u760464709_24005242_bd"
+        )
+
+        mycursor = mydb.cursor(dictionary=True)
+        mycursor.execute("SELECT * FROM view_InfoPagos")
+        myresult = mycursor.fetchall()
+
+        return jsonify(myresult)
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
