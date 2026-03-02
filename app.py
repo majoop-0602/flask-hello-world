@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, jsonify, make_response, session
-
 from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 
