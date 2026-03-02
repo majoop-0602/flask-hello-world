@@ -9,7 +9,7 @@ CORS(app)
 @app.route('/pagos')
 def pagos():
     import mysql.connector
-
+    try:
     mydb = mysql.connector.connect(
         host="46.28.42.226",
         user="u760464709_24005242_usr",
