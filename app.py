@@ -20,8 +20,8 @@ def pagos():
     mycursor.execute("SELECT * FROM view_InfoPagos")
     myresult = mycursor.fetchall()
     
-    mycursor.close()
-    mydb.close()
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/ob_idpedido')
 def ob_idp():
