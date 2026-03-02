@@ -35,7 +35,7 @@ def ob_idp():
         password="u7?Jpkt>Y*E7",
         database="u760464709_24005242_bd"
     )
-    mycursor = mydb.cursor()
+    mycursor = mydb.cursor(dictionary=True)
     mycursor.execute("SELECT * FROM view_obt_id_pedido")
     myresult2 = mycursor.fetchall()
     return make_response(jsonify(myresult2))
